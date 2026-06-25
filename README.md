@@ -3,6 +3,7 @@ Projeto de classificação supervisionada para predição de potabilidade da ág
 
 ## 📁 Estrutura do Projeto
 
+​```
 analise-potabilidade-agua/
 │
 ├── dados/
