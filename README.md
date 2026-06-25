@@ -4,7 +4,6 @@ Projeto de classificação supervisionada para predição de potabilidade da ág
 ## 📁 Estrutura do Projeto
 
 analise-potabilidade-agua/
-
 │
 ├── dados/
 │   ├── water_potability.csv           # Dataset original (Kaggle)
@@ -17,9 +16,9 @@ analise-potabilidade-agua/
 ├── cleaning.ipynb                     # Limpeza do dataset
 ├── preprocessing.ipynb                # Escalonamento e balanceamento
 └── README.md
+```
 
 ## 📊 Dataset
-
 - **Fonte:** [Water Potability — Kaggle](https://www.kaggle.com/datasets/adityakadiwal/water-potability)
 - **Amostras:** 3.276
 - **Features:** 9 atributos físico-químicos (ph, Hardness, Solids, Chloramines, Sulfate, Conductivity, Organic_carbon, Trihalomethanes, Turbidity)
