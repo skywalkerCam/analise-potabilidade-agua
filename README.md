@@ -29,7 +29,9 @@ Projeto de classificação supervisionada para predição de potabilidade da ág
 - Balanceamento das classes com `SMOTE`
 
 ## 🔜 Próximas Etapas
+
+- [ ] Análise exploratória de dados (EDA) e estatísticas
 - [ ] Treinamento e comparação dos classificadores
 - [ ] Tracking dos experimentos com MLflow
 - [ ] Análise dos resultados e métricas
-- [ ] Vídeo de apresentação
+- [ ] Documentação e vídeo de apresentação
