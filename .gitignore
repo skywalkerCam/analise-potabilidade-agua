@@ -7,9 +7,6 @@ __pycache__/
 *.so
 
 
-opencode.json
-AGENTS.md
-
 # Distribution / packaging
 .Python
 build/
