@@ -47,9 +47,41 @@ Projeto de classificação supervisionada para predição de potabilidade da ág
 - **Teste de Hipótese (Mann-Whitney U):** O p-valor de **0.90839** ($p > 0.05$) confirma que não há diferença estatisticamente significativa entre o pH de águas potáveis e não potáveis.
 - **Correlação Linear com o Alvo:** Todos os atributos apresentam correlação linear próxima a zero com a variável `Potability` (faixa de $-0.03$ a $+0.03$).
 
+## 🛠️ Ambiente e Execução
+
+O projeto é fixado em **Python 3.12** (ver `.python-version`). As dependências estão congeladas em `requirements.txt`.
+
+```bash
+# criar e ativar o ambiente
+python3.12 -m venv .venv
+source .venv/bin/activate
+
+# instalar dependências
+pip install -r requirements.txt
+```
+
+Para treinar os modelos, execute o notebook `modelos_preditivos.ipynb`. Os experimentos são registrados via MLflow em um backend SQLite (`mlflow.db`). Para visualizar os resultados:
+
+```bash
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+# abra http://localhost:5000
+```
+
+> O tracking store (`mlruns/` e `mlflow.db`) **não é versionado** — é regenerado ao rodar o notebook e contém caminhos absolutos da máquina local.
+
+### ⚠️ Limitação conhecida: Python 3.14
+
+Não use **Python 3.14** com o MLflow 3.14.0. O _cliente_ funciona (o notebook treina e loga normalmente), mas o **servidor/UI quebra** ao subir, com:
+
+```
+ImportError: cannot import name 'Traversable' from 'importlib.abc'
+```
+
+É um bug do MLflow no Python 3.14 (o `Traversable` foi movido para `importlib.resources.abc` nessa versão), sem correção publicada até o momento — ver [mlflow/mlflow#24155](https://github.com/mlflow/mlflow/issues/24155). Por isso o projeto está fixado no **Python 3.12**, onde o servidor roda nativamente.
+
 ## 🔜 Próximas Etapas
 
-- [ ] Treinamento e comparação dos classificadores
-- [ ] Tracking dos experimentos com MLflow
+- [x] Treinamento e comparação dos classificadores
+- [x] Tracking dos experimentos com MLflow
 - [ ] Análise dos resultados e métricas
 - [ ] Documentação e vídeo de apresentação
